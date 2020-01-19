@@ -170,8 +170,8 @@ tankDrive.setMaxOutput(1.0);
 		rightMaster.setNeutralMode(NeutralMode.Brake);
 
         /* Setup followers  -NOT sure needed here*/
-     //   leftFollower.set(ControlMode.Follower, leftMaster.getDeviceID());
-     //   rightFollower.set(ControlMode.Follower, rightMaster.getDeviceID());
+        leftFollower.set(ControlMode.Follower, leftMaster.getDeviceID());
+        rightFollower.set(ControlMode.Follower, rightMaster.getDeviceID());
 
         /* Invert right side */
         rightMaster.setInverted(true);
@@ -318,7 +318,7 @@ tankDrive.setMaxOutput(1.0);
     }
 
     /** Zero all sensors, both Talons and Pigeon */
-	void zeroSensors() {
+	public void zeroSensors() {
 		leftMaster.getSensorCollection().setIntegratedSensorPosition(0, Constants.kTimeoutMs);
 		rightMaster.getSensorCollection().setIntegratedSensorPosition(0, Constants.kTimeoutMs);
 		pigeon.setYaw(0, Constants.kTimeoutMs);
@@ -326,14 +326,14 @@ tankDrive.setMaxOutput(1.0);
 		System.out.println("Itegrated Encoders + Pigeon] All sensors are zeroed.\n");
 	}
 	/** Zero Integrated Encoders, used to reset position when initializing Motion Magic */
-	void zeroDistance(){
+	private void zeroDistance(){
 		leftMaster.getSensorCollection().setIntegratedSensorPosition(0, Constants.kTimeoutMs);
 		rightMaster.getSensorCollection().setIntegratedSensorPosition(0, Constants.kTimeoutMs);
 		System.out.println("[Integrated Encoders] All encoders are zeroed.\n");
 	}
 	
 	/** Deadband 5 percent, used on the gamepad --NEED TO USE */
-	double Deadband(double value) {
+	private double Deadband(double value) {
 		/* Upper deadband */
 		if (value >= +0.05) 
 			return value;
@@ -347,13 +347,15 @@ tankDrive.setMaxOutput(1.0);
 	}
     public void driveToEncoderUnits(double encoderUnits) {
  			/* Calculate targets from gamepad inputs */
-             double target_sensorUnits = encoderUnits; // .2 * Constants.kSensorUnitsPerRotation * Constants.kRotationsToTravel;
+             double target_sensorUnits = encoderUnits; // currentSpeed * Constants.kSensorUnitsPerRotation * Constants.kRotationsToTravel;
              double target_turn = rightMaster.getSelectedSensorPosition(1); // no turn
+             double angleInput = SmartDashboard.getNumber("TargetAngle",0);
+             if (angleInput != 0) { target_turn = angleInput; } // Angle specified on screen
 
              System.out.println("Target sensor units:" + target_sensorUnits);
              System.out.println("Target turn:" + target_turn);
              
-             /* Configured for MotionMagic on Quad Encoders' Sum and Auxiliary PID on Pigeon */
+             /* Configured for MotionMagic on Integrated Encoders' Sum and Auxiliary PID on Pigeon */
              rightMaster.set(ControlMode.MotionMagic, target_sensorUnits, DemandType.AuxPID, target_turn);
              leftMaster.follow(rightMaster, FollowerType.AuxOutput1);
              rightFollower.follow(rightMaster);
@@ -374,5 +376,9 @@ tankDrive.setMaxOutput(1.0);
             return true;
         }
         return false;   
+    }
+
+    public void stop() {
+        tankDrive.arcadeDrive(0, 0);
     }
 }
