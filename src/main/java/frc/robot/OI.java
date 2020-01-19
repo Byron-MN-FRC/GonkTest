@@ -61,8 +61,6 @@ joystick = new Joystick(0);
 
 
         // SmartDashboard Buttons
-        SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
-        SmartDashboard.putData("DriveWithJoystick", new DriveWithJoystick());
         SmartDashboard.putData("DriveToEncoder: Target10000", new DriveToEncoder(10000));
         SmartDashboard.putData("DriveToEncoder: Target20000", new DriveToEncoder(20000));
 

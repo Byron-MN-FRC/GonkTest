@@ -40,7 +40,7 @@ public class DriveToEncoder extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        setTimeout(5);
+      //  setTimeout(5);
         Robot.driveTrain.driveToEncoderUnits(m_encoderUnits);
     }
 
@@ -52,7 +52,7 @@ public class DriveToEncoder extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return Robot.driveTrain.atTarget(m_encoderUnits) || isTimedOut();
+        return Robot.driveTrain.atTarget(m_encoderUnits); // || isTimedOut();
     }
 
     // Called once after isFinished returns true
