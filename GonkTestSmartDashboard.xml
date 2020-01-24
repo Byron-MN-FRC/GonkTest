@@ -46,7 +46,23 @@
 	<widget field="EncoderUnits" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="245" y="10"/>
 	</widget>
+	<widget field="Yaw" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="672" y="33"/>
+	</widget>
 </dashboard>
 <live-window>
+	<widget field="Ungrouped" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<widget field="Talon SRX [15]" type="Speed Controller" class="edu.wpi.first.smartdashboard.livewindow.elements.SpeedController">
+			<location x="6" y="16"/>
+			<height>45</height>
+			<width>297</width>
+		</widget>
+		<location x="17" y="16"/>
+		<width>309</width>
+		<height>67</height>
+	</widget>
+	<widget field="DriveTrain" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="5" y="29"/>
+	</widget>
 </live-window>
 </xml>
