@@ -1,68 +1,48 @@
 <xml version="1.0">
 <dashboard>
-	<widget field="reading?" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="15" y="36"/>
-		<width>91</width>
-		<height>29</height>
-	</widget>
-	<widget field="Right encoder" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.LinePlot">
-		<location x="-14" y="110"/>
-		<width>403</width>
-		<height>205</height>
-	</widget>
-	<widget field="Left encoder" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.LinePlot">
-		<location x="415" y="111"/>
-		<width>387</width>
-		<height>203</height>
-	</widget>
-	<widget field="Right velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.LinePlot">
-		<location x="6" y="326"/>
-		<height>200</height>
-	</widget>
-	<widget field="Left velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.LinePlot">
-		<location x="417" y="325"/>
-		<width>391</width>
-		<height>200</height>
-	</widget>
-	<widget field="angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="13" y="7"/>
-	</widget>
-	<widget field="ZeroSensors" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="510" y="11"/>
-	</widget>
-	<widget field="DriveToEncoderPreset: Target10000" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="200" y="564"/>
+	<widget field="DriveToEncoder" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="291"/>
 	</widget>
 	<widget field="DriveToEncoderPreset: Target20000" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="464" y="561"/>
+		<location x="0" y="257"/>
 	</widget>
-	<widget field="DriveToEncoder" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="38" y="563"/>
+	<widget field="ZeroSensors" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="223"/>
+	</widget>
+	<widget field="DriveToEncoderPreset: Target10000" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="189"/>
+	</widget>
+	<widget field="Right velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="168"/>
+	</widget>
+	<widget field="Left velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="147"/>
+	</widget>
+	<widget field="reading?" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="126"/>
+	</widget>
+	<widget field="Left encoder" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="105"/>
 	</widget>
 	<widget field="TargetAngle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="247" y="49"/>
-		<height>20</height>
+		<location x="0" y="84"/>
 	</widget>
-	<widget field="EncoderUnits" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="245" y="10"/>
+	<widget field="Right encoder" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="63"/>
 	</widget>
 	<widget field="Yaw" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="672" y="33"/>
+		<location x="0" y="42"/>
+	</widget>
+	<widget field="angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="21"/>
+	</widget>
+	<widget field="EncoderUnits" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="0"/>
 	</widget>
 </dashboard>
 <live-window>
-	<widget field="Ungrouped" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
-		<widget field="Talon SRX [15]" type="Speed Controller" class="edu.wpi.first.smartdashboard.livewindow.elements.SpeedController">
-			<location x="6" y="16"/>
-			<height>45</height>
-			<width>297</width>
-		</widget>
-		<location x="17" y="16"/>
-		<width>309</width>
-		<height>67</height>
-	</widget>
-	<widget field="DriveTrain" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
-		<location x="5" y="29"/>
+	<widget field="ControlPanel" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="0" y="0"/>
 	</widget>
 </live-window>
 </xml>
