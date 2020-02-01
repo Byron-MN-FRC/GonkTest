@@ -40,7 +40,7 @@ public class AutonomousCommand extends Command {
      //   Robot.driveTrain.configPigeon();
      //   System.out.println("initialize");
         setTimeout(5);
-
+        Robot.driveTrain.motorConfigFalcon();
 
     }
 
@@ -49,10 +49,10 @@ public class AutonomousCommand extends Command {
     protected void execute() {
      //   Robot.driveTrain.driveTimed(.2, 0);
      //   System.out.println("drivetime");
-
+        Robot.driveTrain.driveToEncoderUnits(5000);
+        
     }
-
-    // Make this return true when this Command no longer needs to run execute()
+         // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
         return isTimedOut();
