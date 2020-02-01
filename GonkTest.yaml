@@ -7,109 +7,65 @@ Children:
     - Children: []
       Properties:
         CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id001 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+            '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22',
+            '23', '24', '25', '26', '27', '28', '29', '30', '31']
+          default: '2'
+          name: CAN ID
+          validators: &id002 [CANID]
+          value: '0'
+      Base: Talon FX
+      Name: RightFollower
+    - Children: []
+      Properties:
+        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id001
+          default: '2'
+          name: CAN ID
+          validators: *id002
+          value: '2'
+      Base: Talon FX
+      Name: LeftFollower
+    - Children: []
+      Properties:
+        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
           choices: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
             '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23',
             '24', '25', '26', '27', '28', '29', '30', '31']
           default: '2'
           name: CAN ID
           validators: [CANID]
-          value: '15'
-      Base: Talon SRX
-      Name: PigeonTalon
+          value: '4'
+      Base: Pigeon IMU
+      Name: Pigeon
     - Children:
-      - Children:
-        - Children: []
-          Properties:
-            CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-              choices: &id001 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
-                '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21',
-                '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
-              default: '2'
-              name: CAN ID
-              validators: &id002 [CANID]
-              value: '1'
-          Base: Talon FX
-          Name: RightMaster
-        - Children: []
-          Properties:
-            CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-              choices: *id001
-              default: '2'
-              name: CAN ID
-              validators: *id002
-              value: '0'
-          Base: Talon FX
-          Name: RightFollower
+      - Children: []
         Properties:
-          SpeedController4: !!robotbuilder.data.properties.ChildSelectionProperty {
-            default: null, name: SpeedController4, type: PIDOutput, validators: null,
-            value: null}
-          SpeedController3: !!robotbuilder.data.properties.ChildSelectionProperty {
-            default: null, name: SpeedController3, type: PIDOutput, validators: null,
-            value: null}
-          SpeedController2: !!robotbuilder.data.properties.ChildSelectionProperty
-            default: 1
-            name: SpeedController2
-            type: PIDOutput
-            validators: &id003 [SpeedControllerGroup, ChildDropdownSelected]
-            value: RightFollower
-          SpeedController1: !!robotbuilder.data.properties.ChildSelectionProperty
-            default: 0
-            name: SpeedController1
-            type: PIDOutput
-            validators: &id004 [SpeedControllerGroup, ChildDropdownSelected]
-            value: RightMaster
-        Base: Speed Controller Group
-        Name: RightSpeedControllerGroup
-      - Children:
-        - Children: []
-          Properties:
-            CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-              choices: *id001
-              default: '2'
-              name: CAN ID
-              validators: *id002
-              value: '3'
-          Base: Talon FX
-          Name: LeftMaster
-        - Children: []
-          Properties:
-            CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-              choices: *id001
-              default: '2'
-              name: CAN ID
-              validators: *id002
-              value: '2'
-          Base: Talon FX
-          Name: LeftFollower
+          CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+            choices: *id001
+            default: '2'
+            name: CAN ID
+            validators: *id002
+            value: '3'
+        Base: Talon FX
+        Name: LeftMaster
+      - Children: []
         Properties:
-          SpeedController4: !!robotbuilder.data.properties.ChildSelectionProperty {
-            default: null, name: SpeedController4, type: PIDOutput, validators: null,
-            value: null}
-          SpeedController3: !!robotbuilder.data.properties.ChildSelectionProperty {
-            default: null, name: SpeedController3, type: PIDOutput, validators: null,
-            value: null}
-          SpeedController2: !!robotbuilder.data.properties.ChildSelectionProperty
-            default: 1
-            name: SpeedController2
-            type: PIDOutput
-            validators: *id003
-            value: LeftFollower
-          SpeedController1: !!robotbuilder.data.properties.ChildSelectionProperty
-            default: 0
-            name: SpeedController1
-            type: PIDOutput
-            validators: *id004
-            value: LeftMaster
-        Base: Speed Controller Group
-        Name: LeftSpeedControllerGroup
+          CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+            choices: *id001
+            default: '2'
+            name: CAN ID
+            validators: *id002
+            value: '1'
+        Base: Talon FX
+        Name: RightMaster
       Properties:
         Right Motor: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 1
           name: Right Motor
           type: PIDOutput
           validators: [RobotDrive2, ChildDropdownSelected]
-          value: RightSpeedControllerGroup
+          value: RightMaster
         Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Maximum Output, validators: null, value: 1.0}
         Left Motor: !!robotbuilder.data.properties.ChildSelectionProperty
@@ -117,7 +73,7 @@ Children:
           name: Left Motor
           type: PIDOutput
           validators: [RobotDrive2, ChildDropdownSelected]
-          value: LeftSpeedControllerGroup
+          value: LeftMaster
         Safety Expiration Time: !!robotbuilder.data.properties.DoubleProperty {default: 0.1,
           name: Safety Expiration Time, validators: null, value: 0.1}
         Safety Enabled: !!robotbuilder.data.properties.BooleanProperty {default: true,
