@@ -277,6 +277,10 @@ tankDrive.setMaxOutput(1.0);
 		rightFollower.follow(rightMaster);
 		leftFollower.follow(leftMaster);
 		zeroSensors();
+	//	rightMaster.configStatorCurrentLimit(currLimitCfg)  (Constants.kPeakCurrentAmps, Constants.kTimeoutMs);
+	//	rightMaster.configPeakCurrentDuration(Constants.kPeakTimeMs, Constants.kTimeoutMs);
+	//	rightMaster.configContinuousCurrentLimit(Constants.kContinCurrentAmps, Constants.kTimeoutMs);
+	//	rightMaster.enableCurrentLimit(_currentLimEn); // Honor initial setting
 		
   }
 

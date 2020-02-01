@@ -4,6 +4,15 @@
 package frc.robot;
 
 public class Constants {
+	 /* Current threshold to trigger current limit */
+	 public static final int kPeakCurrentAmps = 3;
+    
+	 /* Duration after current exceed Peak Current to trigger current limit */
+	 public static final int kPeakTimeMs = 0;
+ 
+	 /* Current to mantain once current limit has been triggered */
+	 public static final int kContinCurrentAmps = 2;
+ 
 	/**
 	 * Number of joystick buttons to poll.
 	 * 10 means buttons[1,9] are polled, which is actually 9 buttons.
