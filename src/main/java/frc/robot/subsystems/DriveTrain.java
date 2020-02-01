@@ -294,6 +294,15 @@ public class DriveTrain extends Subsystem {
 		/* Initialize */
 
 		rightMaster.setStatusFramePeriod(StatusFrameEnhanced.Status_10_Targets, 10);
+		// WPI drivetrain classes assume by default left & right are opposite
+		// - call this to apply + to both sides when moving forward
+		tankDrive.setRightSideInverted(false);
+
+		// set on call from autonomous
+		rightMaster.selectProfileSlot(Constants.kSlot_Distanc, Constants.PID_PRIMARY);
+		rightMaster.selectProfileSlot(Constants.kSlot_Turning, Constants.PID_TURN);
+		rightFollower.follow(rightMaster);
+		leftFollower.follow(leftMaster);
 		zeroSensors();
 	}
 
