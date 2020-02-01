@@ -261,10 +261,11 @@ tankDrive.setMaxOutput(1.0);
 		
 		
 		// artificial limit for testing
-        leftMaster.configPeakOutputForward(+0.05, Constants.kTimeoutMs);
-		leftMaster.configPeakOutputReverse(-0.05, Constants.kTimeoutMs);
-		rightMaster.configPeakOutputForward(+0.05, Constants.kTimeoutMs);
-		rightMaster.configPeakOutputReverse(-0.05, Constants.kTimeoutMs);
+		double max = 0.2;
+        leftMaster.configPeakOutputForward(max, Constants.kTimeoutMs);
+		leftMaster.configPeakOutputReverse(-max, Constants.kTimeoutMs);
+		rightMaster.configPeakOutputForward(max, Constants.kTimeoutMs);
+		rightMaster.configPeakOutputReverse(-max, Constants.kTimeoutMs);
 
         /* WPI drivetrain classes assume by default left & right are opposite */
         /* - call this to apply + to both sides when moving forward           */
