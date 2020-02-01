@@ -1,51 +1,21 @@
 /**
  * Simple class containing constants used throughout project
  */
-
 package frc.robot;
-
-import java.util.HashMap;
-import java.util.Map;
-
-//import org.usfirst.frc4859.Rover.Gains;
 
 public class Constants {
 	/**
-	 * Which PID slot to pull gains from. Starting 2018, you can choose from
-	 * 0,1,2 or 3. Only the first two (0,1) are visible in web-based
-	 * configuration.
+	 * Number of joystick buttons to poll.
+	 * 10 means buttons[1,9] are polled, which is actually 9 buttons.
 	 */
-	public static final int kSlotIdx = 0;
-
-	/**
-	 * Talon SRX/ Victor SPX will supported multiple (cascaded) PID loops. For
-	 * now we just want the primary one.
-	 */
-	public static final int kPIDLoopIdx = 0;
-
-	/**
-	 * set to zero to skip waiting for confirmation, set to nonzero to wait and
-	 * report to DS if action fails.
-	 */
-	public static final int kTimeoutMs = 30;
-
-	/* ------ */
-
-	// Constants for driving straight with motion magic and auxillary pigeon - subset from example :
-	// (see https://github.com/CrossTheRoadElec/Phoenix-Examples-Languages/blob/master/Java/MotionMagic_AuxStraightPigeon/src/main/java/frc/robot/Constants.java)
-	
-	/**
-	 * Gains used in Motion Magic, to be adjusted accordingly
-     * Gains(kp, ki, kd, kf, izone, peak output);
-     */
-	public static final Gains kGains = new Gains(0.2, 0.001, 0.0, 0.2, 0, 1.0);
-	
+	public final static int kNumButtonsPlusOne = 10;
+	public static final int kPIDLoopIdx = 0; //Check how it is done with talon
 	/**
 	 * How many sensor units per rotation.
-	 * Using CTRE Integrated Encoder.
-	 * @link https://github.com/CrossTheRoadElec/Phoenix-Documentation#what-are-the-units-of-my-sensor ????
+	 * Using Talon FX Integrated Encoder.
+	 * @link https://github.com/CrossTheRoadElec/Phoenix-Documentation#what-are-the-units-of-my-sensor
 	 */
-	public final static int kSensorUnitsPerRotation = 4096;
+	public final static int kSensorUnitsPerRotation = 2048;
 	
 	/**
 	 * Number of rotations to drive when performing Distance Closed Loop
@@ -56,6 +26,12 @@ public class Constants {
 	 * This is a property of the Pigeon IMU, and should not be changed.
 	 */
 	public final static int kPigeonUnitsPerRotation = 8192;
+
+	/**
+	 * Set to zero to skip waiting for confirmation.
+	 * Set to nonzero to wait and report to DS if action fails.
+	 */
+	public final static int kTimeoutMs = 30;
 
 	/**
 	 * Motor neutral dead-band, set to the minimum 0.1%.
