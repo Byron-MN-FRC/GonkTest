@@ -52,7 +52,8 @@ public class AutonomousCommand extends Command {
      //   Robot.driveTrain.driveTimed(.2, 0);
      //   System.out.println("drivetime");
         Robot.driveTrain.driveToEncoderUnits(5000);
-        
+        Robot.driveTrain.turn(90);
+        Robot.driveTrain.driveToEncoderUnits(300);
     }
          // Make this return true when this Command no longer needs to run execute()
     @Override

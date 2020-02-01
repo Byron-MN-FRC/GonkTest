@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Constants {
 	public static final boolean enable = true;
-	public static final double threshholdLimit = SmartDashboard.getNumber("Highest amp level", 3);
+
 	public static final double threshholdTime = 0;
 	 /**
 	 * Number of joystick buttons to poll.

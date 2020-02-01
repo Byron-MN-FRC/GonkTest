@@ -593,4 +593,26 @@ public class DriveTrain extends Subsystem {
 		 */
 		masterConfig.primaryPID.selectedFeedbackCoefficient = 0.5;
 	}
+	public void turn(final double angle){
+		final double[] ypr = new double[3];
+		pigeon.getYawPitchRoll(ypr);
+		double remainingDistance = 0;
+		final double targetHeading = ypr[0] + angle;
+		double remainingAngle = Math.abs(targetHeading - ypr[0]);
+		while (remainingAngle > Constants.kTurn_Tolerance)
+		{
+			SmartDashboard.putNumber("remaining angle", remainingAngle);
+			SmartDashboard.putNumber("yaw angle", ypr[0]);
+			
+			if (angle > 0.0) {
+				tankDrive.arcadeDrive(0.0, -0.2);
+			}
+			else {
+				tankDrive.arcadeDrive(0.0, 0.2);
+			}
+			//tankDrive.arcadeDrive(0.0, (angle > 0.0)? -0.2: 0.2);
+			pigeon.getYawPitchRoll(ypr);
+			remainingAngle = Math.abs(targetHeading - ypr[0]);
+		}
+	}
 }
