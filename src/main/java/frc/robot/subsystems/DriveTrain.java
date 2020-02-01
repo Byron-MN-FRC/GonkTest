@@ -273,6 +273,9 @@ tankDrive.setMaxOutput(1.0);
 		// set on call from autonomous
 		rightMaster.selectProfileSlot(Constants.kSlot_Distanc, Constants.PID_PRIMARY);
 		rightMaster.selectProfileSlot(Constants.kSlot_Turning, Constants.PID_TURN);
+		rightFollower.follow(rightMaster);
+		leftFollower.follow(leftMaster);
+		zeroSensors();
 		
   }
 
