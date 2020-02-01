@@ -106,9 +106,9 @@ driveTrain = new DriveTrain();
         if (autonomousCommand != null) autonomousCommand.cancel();
 
         // Initialize Drive Train
-        Robot.driveTrain.config();
+        // Robot.driveTrain.motorConfigFalcon();
+        Robot.driveTrain.motorConfigTalon();
     }
-
     /**
      * This function is called periodically during operator control
      */
