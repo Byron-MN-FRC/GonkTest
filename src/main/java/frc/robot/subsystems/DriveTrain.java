@@ -139,6 +139,13 @@ tankDrive.setMaxOutput(1.0);
 	private double twist = 0;
 
 
+    public void driveToPowerCell(int xPos, int height) {
+		twist = xPos / 1000;
+        y = 0;
+        tankDrive.arcadeDrive(y, twist);    
+	}
+	
+
     public void driveforward(Joystick joystickP0) {
 		y = -joystickP0.getY();
         twist = joystickP0.getTwist();
