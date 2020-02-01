@@ -3,17 +3,13 @@
  */
 package frc.robot;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 public class Constants {
-	 /* Current threshold to trigger current limit */
-	 public static final int kPeakCurrentAmps = 3;
-    
-	 /* Duration after current exceed Peak Current to trigger current limit */
-	 public static final int kPeakTimeMs = 0;
- 
-	 /* Current to mantain once current limit has been triggered */
-	 public static final int kContinCurrentAmps = 2;
- 
-	/**
+	public static final boolean enable = true;
+	public static final double threshholdLimit = SmartDashboard.getNumber("Highest amp level", 3);
+	public static final double threshholdTime = 0;
+	 /**
 	 * Number of joystick buttons to poll.
 	 * 10 means buttons[1,9] are polled, which is actually 9 buttons.
 	 */

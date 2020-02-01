@@ -107,8 +107,8 @@ driveTrain = new DriveTrain();
 
         // Initialize Drive Train
         // Robot.driveTrain.motorConfigFalcon();
-        Robot.driveTrain.motorConfigTalon();
-    }
+        Robot.driveTrain.motorConfigFalcon();
+      }
     /**
      * This function is called periodically during operator control
      */
