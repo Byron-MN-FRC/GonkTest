@@ -38,7 +38,7 @@ public class AutoStraight extends Command {
     @Override
     protected void initialize() {
         
-        Robot.driveTrain.driveToEncoderUnits(m_encoderUnits);
+        Robot.driveTrain.driveToEncoderUnits(10000);
     }
 
     // Called repeatedly when this Command is scheduled to run
