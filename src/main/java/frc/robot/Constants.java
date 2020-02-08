@@ -5,13 +5,13 @@ package frc.robot;
 
 public class Constants {
 	 /* Current threshold to trigger current limit */
-	 public static final int kPeakCurrentAmps = 3;
+	 public static final int kPeakCurrentAmps = 10;
     
 	 /* Duration after current exceed Peak Current to trigger current limit */
 	 public static final int kPeakTimeMs = 0;
  
 	 /* Current to mantain once current limit has been triggered */
-	 public static final int kContinCurrentAmps = 2;
+	 public static final int kContinCurrentAmps = 10;
  
 	/**
 	 * Number of joystick buttons to poll.
@@ -54,6 +54,7 @@ public class Constants {
      * 
 	 * 	                                    			  kP   kI   kD   kF               Iz    PeakOut */
 	public final static Gains kGains_Distanc = new Gains( 0.1, 0.0,  0.0, 0.0,            100,  0.50 );
+	//public final static Gains kGains_Turning = new Gains( 1.0, 0.0,  0.0, 0.0,            200,  0.50 );
 	public final static Gains kGains_Turning = new Gains( 2.0, 0.0,  4.0, 0.0,            200,  1.00 );
 	public final static Gains kGains_Velocit = new Gains( 0.1, 0.0, 20.0, 1023.0/6800.0,  300,  0.50 );
 	public final static Gains kGains_MotProf = new Gains( 1.0, 0.0,  0.0, 1023.0/6800.0,  400,  1.00 );
