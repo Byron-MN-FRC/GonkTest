@@ -1,48 +1,111 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="yaw angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="161" y="0"/>
+	</widget>
+	<widget field="remaining angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="459"/>
+	</widget>
+	<widget field="AutoTurn" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="175" y="123"/>
+	</widget>
+	<widget field="DriveToAngle: Right90" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="399" y="34"/>
+	</widget>
 	<widget field="DriveToEncoder" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="0" y="291"/>
+		<location x="399" y="0"/>
+	</widget>
+	<widget field="AutoRun" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="182" y="89"/>
+	</widget>
+	<widget field="AutoWait" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="182" y="55"/>
 	</widget>
 	<widget field="DriveToEncoderPreset: Target20000" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="0" y="257"/>
+		<location x="144" y="21"/>
+	</widget>
+	<widget field="DriveToAngle: Left90" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="425"/>
 	</widget>
 	<widget field="ZeroSensors" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="0" y="223"/>
+		<location x="0" y="391"/>
 	</widget>
 	<widget field="DriveToEncoderPreset: Target10000" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="0" y="189"/>
+		<location x="0" y="357"/>
 	</widget>
 	<widget field="Right velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="168"/>
+		<location x="0" y="336"/>
 	</widget>
 	<widget field="Left velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="147"/>
+		<location x="0" y="315"/>
 	</widget>
 	<widget field="reading?" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="126"/>
+		<location x="0" y="294"/>
+	</widget>
+	<widget field="Highset amp level" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="273"/>
+	</widget>
+	<widget field="Left Amps" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="252"/>
 	</widget>
 	<widget field="Left encoder" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="105"/>
+		<location x="0" y="231"/>
 	</widget>
 	<widget field="TargetAngle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="84"/>
+		<location x="0" y="210"/>
+	</widget>
+	<widget field="Left Temp" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="189"/>
 	</widget>
 	<widget field="Right encoder" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="63"/>
+		<location x="0" y="168"/>
 	</widget>
 	<widget field="Yaw" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="42"/>
+		<location x="0" y="147"/>
+	</widget>
+	<widget field="Right Amps" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="126"/>
+	</widget>
+	<widget field="Left Input Amps" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="105"/>
+	</widget>
+	<widget field="Right Input Amps" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="84"/>
+	</widget>
+	<widget field="Right Temp" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="63"/>
 	</widget>
 	<widget field="angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="42"/>
+	</widget>
+	<widget field="Amp limit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="0" y="21"/>
 	</widget>
 	<widget field="EncoderUnits" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="0" y="0"/>
 	</widget>
+	<widget field="Autonomous Command" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="4" y="10"/>
+	</widget>
 </dashboard>
 <live-window>
-	<widget field="ControlPanel" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
-		<location x="0" y="0"/>
+	<widget field="Ungrouped" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<widget field="Talon FX [2]" type="Speed Controller" class="edu.wpi.first.smartdashboard.livewindow.elements.SpeedController">
+			<location x="6" y="16"/>
+			<height>45</height>
+			<width>297</width>
+		</widget>
+		<widget field="Talon FX [0]" type="Speed Controller" class="edu.wpi.first.smartdashboard.livewindow.elements.SpeedController">
+			<location x="6" y="61"/>
+			<height>45</height>
+			<width>297</width>
+		</widget>
+		<location x="31" y="2"/>
+		<width>309</width>
+		<height>112</height>
+	</widget>
+	<widget field="DriveTrain" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="18" y="23"/>
 	</widget>
 </live-window>
 </xml>
