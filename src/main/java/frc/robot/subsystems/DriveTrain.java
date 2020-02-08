@@ -493,6 +493,10 @@ tankDrive.setMaxOutput(1.0);
 		return 0;
 	}
 
+	public void driveToFeet(double feet) {
+		driveToEncoderUnits(feet * 14177.65);
+	}
+
 	public void driveToEncoderUnits(double target_sensorUnits) {
 		// double target_turn = rightMaster.getSensorCollection.get(1); // no turn
 		double target_turn = 0;
